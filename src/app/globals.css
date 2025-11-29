@@ -1,26 +1,85 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
+
+  --color-background: #050505;
+  --color-foreground: #ffffff;
+
+  --color-primary: #ffffff;
+  --color-primary-foreground: #000000;
+  --color-secondary: #94a3b8;
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent-cyan: #06b6d4;
+  --color-accent-purple: #7c3aed;
+  --color-accent-blue: #3b82f6;
+
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-bg: rgba(255, 255, 255, 0.03);
+  --color-glass-bg-hover: rgba(255, 255, 255, 0.06);
+
+  --color-input: rgba(255, 255, 255, 0.1);
+  --color-ring: #06b6d4;
+  --color-accent: rgba(255, 255, 255, 0.1);
+  --color-accent-foreground: #ffffff;
+  --color-muted: rgba(255, 255, 255, 0.05);
+  --color-muted-foreground: #94a3b8;
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #ffffff;
+  --color-border: rgba(255, 255, 255, 0.1);
+
+  --shadow-glass: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  --shadow-card: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+  --shadow-glow: 0 0 40px -10px rgba(6, 182, 212, 0.3);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Custom Utilities */
+@utility glass-panel {
+  @apply backdrop-blur-xl bg-glass-bg border border-glass-border shadow-[var(--shadow-glass)];
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@utility glass-card {
+  @apply backdrop-blur-xl bg-glass-bg border border-glass-border rounded-2xl shadow-[var(--shadow-card)] hover:bg-glass-bg-hover transition-all duration-300 hover:shadow-[var(--shadow-glow)] hover:-translate-y-1;
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-cyan via-blue-400 to-accent-purple;
+}
+
+@utility bg-gradient-premium {
+  @apply bg-gradient-to-br from-neutral-900 via-neutral-950 to-black;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-background text-foreground font-sans antialiased;
+  min-height: 100vh;
+  background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05), transparent 40%);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-neutral-950;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-800 rounded-full border-2 border-neutral-950;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-700;
 }
