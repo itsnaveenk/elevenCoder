@@ -83,3 +83,31 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-neutral-700;
 }
+
+@keyframes bounce-x {
+
+  0%,
+  100% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+
+  50% {
+    transform: translateX(25%);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+@utility animate-bounce-x {
+  animation: bounce-x 1s infinite;
+}
+
+@keyframes border-beam {
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@utility animate-border-beam {
+  animation: border-beam calc(var(--duration)*1s) infinite linear;
+}

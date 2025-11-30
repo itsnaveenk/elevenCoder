@@ -110,7 +110,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+              <ServiceCard key={service.title} {...service} withBorderBeam={true} />
             ))}
           </div>
         </Container>
@@ -139,8 +139,8 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {projects.map((project) => (
-              <PortfolioCard key={project.slug} {...project} />
+            {projects.map((project, index) => (
+              <PortfolioCard key={project.slug} {...project} withBorderBeam={true} />
             ))}
           </div>
         </Container>
@@ -183,10 +183,10 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
-              <Button size="xl" className="text-lg h-14 px-8" asChild>
+              <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
                 <Link href="/contact">
                   Schedule a Call
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
                 </Link>
               </Button>
               <Button size="xl" variant="outline" className="text-lg h-14 px-8" asChild>

@@ -9,7 +9,7 @@ import { Beams } from "@/components/ui/ethereal-beams-hero";
 
 export function HeroSection() {
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32">
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 z-0">
                 <Beams
@@ -26,7 +26,7 @@ export function HeroSection() {
             </div>
 
             <Container className="relative z-10">
-                <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+                <div className="flex flex-col items-center text-center max-w-5xl mx-auto pt-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -63,10 +63,10 @@ export function HeroSection() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
                     >
-                        <Button size="xl" className="text-lg px-8 h-14 bg-white text-black hover:bg-slate-200 transition-all" asChild>
+                        <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
                             <Link href="/contact">
                                 Schedule a Free Consultation
-                                <ArrowRight className="ml-2 w-5 h-5" />
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
                             </Link>
                         </Button>
                         <Button size="xl" variant="outline" className="text-lg px-8 h-14 border-white/20 hover:bg-white/10" asChild>
