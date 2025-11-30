@@ -195,7 +195,7 @@ export default function Home() {
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
               <CTATracker id="home-cta">
-                <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
+                <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_40px_rgba(255,255,255,0.3)] transition-transform hover:scale-105 duration-300 ease-out" asChild>
                   <Link href="/contact">
                     Schedule a Call
                     <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
