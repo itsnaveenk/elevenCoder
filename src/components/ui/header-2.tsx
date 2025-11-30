@@ -19,8 +19,12 @@ export function Header() {
             href: '/services',
         },
         {
-            label: 'Work',
-            href: '/portfolio',
+            label: 'Industries',
+            href: '/industries',
+        },
+        {
+            label: 'Case Studies',
+            href: '/case-studies',
         },
         {
             label: 'About',

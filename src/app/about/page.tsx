@@ -2,51 +2,30 @@
 
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Target, Users, Heart, Zap } from "lucide-react";
+import { ArrowRight, Target, Users, Zap, Brain, Rocket, MessageSquare } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const values = [
     {
         icon: <Target className="w-6 h-6" />,
-        title: "Impact Driven",
-        description: "We focus on outcomes, not just output. Every line of code should serve a business goal."
-    },
-    {
-        icon: <Users className="w-6 h-6" />,
-        title: "Client Partnership",
-        description: "We work with you, not just for you. Your success is our success."
+        title: "Business First, Code Second",
+        description: "We don't just write code; we solve business problems. Every feature we build is designed to increase revenue or save time."
     },
     {
         icon: <Zap className="w-6 h-6" />,
-        title: "Speed & Quality",
-        description: "We move fast without breaking things. Modern tools allow us to deliver quality at speed."
+        title: "Speed & Agility",
+        description: "As a specialized team, we move faster than large agencies. No bureaucracy, no endless meetings—just results."
     },
     {
-        icon: <Heart className="w-6 h-6" />,
-        title: "Transparency",
-        description: "No hidden fees, no jargon. We keep you in the loop at every step."
-    }
-];
-
-const team = [
-    {
-        name: "Alex Morgan",
-        role: "Founder & Lead Architect",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
-        bio: "Ex-Google engineer with 10+ years of experience building scalable systems."
+        icon: <Brain className="w-6 h-6" />,
+        title: "AI Native",
+        description: "We integrate Artificial Intelligence into everything we build, giving your business a competitive edge."
     },
     {
-        name: "Sarah Chen",
-        role: "Head of Product Design",
-        image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop",
-        bio: "Award-winning designer passionate about creating intuitive user experiences."
-    },
-    {
-        name: "David Kim",
-        role: "Senior AI Engineer",
-        image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop",
-        bio: "Specialist in NLP and computer vision, turning complex AI research into practical solutions."
+        icon: <MessageSquare className="w-6 h-6" />,
+        title: "Direct Communication",
+        description: "You talk directly to the engineers building your product, not a project manager. Clear, honest, and fast updates."
     }
 ];
 
@@ -57,19 +36,20 @@ export default function AboutPage() {
                 {/* Hero */}
                 <div className="max-w-4xl mx-auto text-center mb-24">
                     <h1 className="text-4xl md:text-6xl font-bold mb-8">
-                        We Help Businesses <span className="text-gradient">Thrive Globally</span>
+                        We Bridge the Gap Between <span className="text-gradient">Business & Tech</span>
                     </h1>
                     <p className="text-xl text-slate-400 leading-relaxed mb-8">
-                        ElevenCoder is a modern software agency dedicated to building high-quality digital solutions. We combine technical expertise with business acumen to help you scale.
+                        ElevenCoder is a boutique software agency that helps non-technical founders and business owners build world-class digital products.
                     </p>
                 </div>
 
                 {/* Mission */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center mb-32">
-                    <div className="relative aspect-square md:aspect-video rounded-2xl overflow-hidden">
+                    <div className="relative aspect-square md:aspect-video rounded-2xl overflow-hidden border border-white/10">
+                        <div className="absolute inset-0 bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 z-10" />
                         <Image
                             src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
-                            alt="Team working together"
+                            alt="Team collaboration"
                             fill
                             className="object-cover"
                         />
@@ -77,49 +57,65 @@ export default function AboutPage() {
                     <div>
                         <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
                         <p className="text-slate-400 text-lg mb-6 leading-relaxed">
-                            We believe that every business, regardless of size, deserves world-class software. Our mission is to democratize access to premium engineering and design, enabling companies to compete on a global stage.
+                            We believe that every business needs to become a digital business to survive. But most agencies speak a language that business owners don't understand.
                         </p>
-                        <p className="text-slate-400 text-lg leading-relaxed">
-                            We are not just coders; we are problem solvers. We take the time to understand your unique challenges and build custom solutions that deliver measurable results.
+                        <p className="text-slate-400 text-lg leading-relaxed mb-6">
+                            Our mission is to make high-end software development accessible, transparent, and ROI-focused. We strip away the jargon and focus on what matters: <strong>Growth, Efficiency, and Automation.</strong>
                         </p>
+                        <div className="flex items-center gap-4">
+                            <div className="flex -space-x-4">
+                                <div className="w-12 h-12 rounded-full border-2 border-black bg-slate-800 flex items-center justify-center text-xs font-bold">AM</div>
+                                <div className="w-12 h-12 rounded-full border-2 border-black bg-slate-700 flex items-center justify-center text-xs font-bold">SC</div>
+                            </div>
+                            <p className="text-sm text-slate-500">
+                                Led by a dedicated team of senior engineers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                {/* The "Team of Two" Advantage */}
+                <div className="mb-32 bg-white/5 rounded-3xl p-8 md:p-16 border border-white/10 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-accent-cyan/5 to-transparent pointer-events-none" />
+
+                    <div className="relative z-10 text-center max-w-3xl mx-auto">
+                        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-cyan/10 text-accent-cyan text-sm font-medium mb-6">
+                            <Rocket className="w-4 h-4" />
+                            The Boutique Advantage
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Work With a Small Team?</h2>
+                        <p className="text-lg text-slate-400 mb-12">
+                            Large agencies have overhead, slow processes, and junior developers. We offer a different approach.
+                        </p>
+
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                            <div className="p-6 rounded-xl bg-black/20 border border-white/5">
+                                <h3 className="font-bold text-lg mb-2 text-white">Faster Delivery</h3>
+                                <p className="text-sm text-slate-400">Decisions are made instantly. Code is shipped daily. We don't waste time.</p>
+                            </div>
+                            <div className="p-6 rounded-xl bg-black/20 border border-white/5">
+                                <h3 className="font-bold text-lg mb-2 text-white">Senior Expertise</h3>
+                                <p className="text-sm text-slate-400">You get 100% senior engineer attention. No interns touching your codebase.</p>
+                            </div>
+                            <div className="p-6 rounded-xl bg-black/20 border border-white/5">
+                                <h3 className="font-bold text-lg mb-2 text-white">Cost Effective</h3>
+                                <p className="text-sm text-slate-400">You pay for code and strategy, not for our office rent or middle management.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 {/* Values */}
-                <div className="mb-32">
-                    <h2 className="text-3xl font-bold mb-12 text-center">Our Core Values</h2>
+                <div className="mb-24">
+                    <h2 className="text-3xl font-bold mb-12 text-center">Why Businesses Trust Us</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {values.map((value, index) => (
-                            <div key={index} className="glass-card p-8">
-                                <div className="w-12 h-12 rounded-lg bg-accent-cyan/10 flex items-center justify-center text-accent-cyan mb-6">
+                            <div key={index} className="glass-card p-8 hover:bg-white/5 transition-colors">
+                                <div className="w-12 h-12 rounded-lg bg-accent-purple/10 flex items-center justify-center text-accent-purple mb-6">
                                     {value.icon}
                                 </div>
                                 <h3 className="text-xl font-bold mb-3">{value.title}</h3>
-                                <p className="text-slate-400">{value.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-
-                {/* Team */}
-                <div className="mb-24">
-                    <h2 className="text-3xl font-bold mb-12 text-center">Meet the Team</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {team.map((member, index) => (
-                            <div key={index} className="glass-card p-0 overflow-hidden group">
-                                <div className="relative h-64 bg-neutral-800">
-                                    <Image
-                                        src={member.image}
-                                        alt={member.name}
-                                        fill
-                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                    />
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-                                    <p className="text-accent-cyan text-sm font-medium mb-4">{member.role}</p>
-                                    <p className="text-slate-400 text-sm">{member.bio}</p>
-                                </div>
+                                <p className="text-slate-400 text-sm leading-relaxed">{value.description}</p>
                             </div>
                         ))}
                     </div>
@@ -127,12 +123,15 @@ export default function AboutPage() {
 
                 {/* CTA */}
                 <div className="text-center">
-                    <h2 className="text-3xl font-bold mb-6">Want to join us?</h2>
-                    <p className="text-slate-400 mb-8">
-                        We are always looking for talented individuals to join our team.
+                    <h2 className="text-3xl font-bold mb-6">Ready to start your journey?</h2>
+                    <p className="text-slate-400 mb-8 max-w-xl mx-auto">
+                        We only take on a limited number of clients to ensure quality. Let's see if we're a good fit.
                     </p>
-                    <Button variant="outline" asChild>
-                        <Link href="/contact">Contact Us</Link>
+                    <Button size="xl" asChild>
+                        <Link href="/contact">
+                            Book a Free Consultation
+                            <ArrowRight className="ml-2 w-5 h-5" />
+                        </Link>
                     </Button>
                 </div>
             </Container>

@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Beams } from "@/components/ui/ethereal-beams-hero";
 import { CTATracker } from "@/components/ui/cta-visibility-context";
@@ -36,7 +36,7 @@ export function HeroSection() {
                     >
                         <Sparkles className="w-4 h-4 text-accent-cyan" />
                         <span className="text-sm font-medium text-slate-300">
-                            AI-Powered Software Agency
+                            We speak business, not tech.
                         </span>
                     </motion.div>
 
@@ -46,7 +46,7 @@ export function HeroSection() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="text-5xl md:text-7xl font-bold tracking-tight mb-8 leading-tight"
                     >
-                        We Build <span className="text-gradient">AI-Powered</span> Digital Solutions That Help You <span className="text-white">Thrive Globally.</span>
+                        We Build Modern Software That <span className="text-gradient">Saves Time</span> & <span className="text-white">Grows Revenue.</span>
                     </motion.h1>
 
                     <motion.p
@@ -55,7 +55,7 @@ export function HeroSection() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl leading-relaxed"
                     >
-                        Custom Web Apps, Mobile Apps, AI Automation & Digital Transformation for growing businesses. We help you scale, go international, and stand out.
+                        Custom Business Portals, AI Automation, and Websites designed for business owners. Fast delivery. Clear communication. No jargon.
                     </motion.p>
 
                     <motion.div
@@ -67,13 +67,13 @@ export function HeroSection() {
                         <CTATracker id="hero-cta">
                             <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_40px_rgba(255,255,255,0.7)] transition-transform hover:scale-105 duration-300 ease-out" asChild>
                                 <Link href="/contact">
-                                    Schedule a Free Consultation
+                                    Book a 20-Minute Call
                                     <ArrowRight className="ml-2 w-5 h-5 animate-bounce-x" />
                                 </Link>
                             </Button>
                         </CTATracker>
                         <Button size="xl" variant="outline" className="text-lg px-8 h-14 border-white/20 hover:bg-white/10" asChild>
-                            <Link href="/portfolio">
+                            <Link href="/case-studies">
                                 See Our Work
                             </Link>
                         </Button>

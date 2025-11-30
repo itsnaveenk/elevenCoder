@@ -20,8 +20,8 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "Modern Software Agency | Web Apps & AI Solutions",
-  description: "We build modern web apps & AI solutions that help businesses go digital — fast. Custom software, dashboards, and automation.",
+  title: "ElevenCoder | Custom Software & AI Automation for Business",
+  description: "We help businesses go digital with custom web apps, AI automation, and internal tools. Save time and grow revenue with modern software solutions.",
 };
 
 import { ThemeProvider } from "@/components/theme-provider";

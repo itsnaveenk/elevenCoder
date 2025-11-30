@@ -10,17 +10,18 @@ export function Footer() {
                         <Link href="/" className="text-2xl font-bold tracking-tight text-foreground block mb-4">
                             Elev<span className="text-accent-cyan">Encoder</span>
                         </Link>
-                        <p className="text-slate-400 max-w-sm">
-                            We build modern web apps & AI solutions that help businesses go digital — fast.
+                        <p className="text-slate-400 max-w-sm leading-relaxed">
+                            We help businesses go digital with custom software, AI automation, and high-converting websites. No jargon, just results.
                         </p>
                     </div>
 
                     <div>
                         <h4 className="font-semibold mb-4 text-white">Services</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
-                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">Web Applications</Link></li>
-                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">AI & Automation</Link></li>
-                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">MVP Development</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">Business Websites</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">Custom Portals</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">AI Automation</Link></li>
+                            <li><Link href="/services" className="hover:text-accent-cyan transition-colors">Mobile Apps</Link></li>
                         </ul>
                     </div>
 
@@ -28,7 +29,8 @@ export function Footer() {
                         <h4 className="font-semibold mb-4 text-white">Company</h4>
                         <ul className="space-y-2 text-sm text-slate-400">
                             <li><Link href="/about" className="hover:text-accent-cyan transition-colors">About Us</Link></li>
-                            <li><Link href="/portfolio" className="hover:text-accent-cyan transition-colors">Portfolio</Link></li>
+                            <li><Link href="/industries" className="hover:text-accent-cyan transition-colors">Industries</Link></li>
+                            <li><Link href="/case-studies" className="hover:text-accent-cyan transition-colors">Case Studies</Link></li>
                             <li><Link href="/contact" className="hover:text-accent-cyan transition-colors">Contact</Link></li>
                         </ul>
                     </div>
