@@ -14,6 +14,8 @@ import { ArrowRight, LayoutDashboard, Bot, Smartphone, Database, BarChart3, Glob
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+import { CTATracker } from "@/components/ui/cta-visibility-context";
+
 const services = [
   {
     title: "Web App Development",
@@ -192,12 +194,14 @@ export default function Home() {
               transition={{ delay: 0.2 }}
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
-              <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
-                <Link href="/contact">
-                  Schedule a Call
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
-                </Link>
-              </Button>
+              <CTATracker id="home-cta">
+                <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
+                  <Link href="/contact">
+                    Schedule a Call
+                    <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
+                  </Link>
+                </Button>
+              </CTATracker>
               <Button size="xl" variant="outline" className="text-lg h-14 px-8" asChild>
                 <Link href="/contact">
                   Get a Project Quote

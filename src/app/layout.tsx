@@ -25,6 +25,7 @@ export const metadata: Metadata = {
 };
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { CTAVisibilityProvider } from "@/components/ui/cta-visibility-context";
 
 export default function RootLayout({
   children,
@@ -42,13 +43,15 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          <Header />
-          <main className="min-h-screen">
-            {children}
-          </main>
-          <Footer />
-          <StickyCTA />
-          <Analytics />
+          <CTAVisibilityProvider>
+            <Header />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
+            <StickyCTA />
+            <Analytics />
+          </CTAVisibilityProvider>
         </ThemeProvider>
       </body>
     </html>

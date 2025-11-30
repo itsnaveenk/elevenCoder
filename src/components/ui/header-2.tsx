@@ -4,6 +4,7 @@ import { Button, buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
+import { ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 
 import { motion } from "framer-motion";
@@ -43,48 +44,50 @@ export function Header() {
     }, [open]);
 
     return (
-        <motion.header
-            layout
-            transition={{ type: "spring", stiffness: 120, damping: 20 }}
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50 mx-auto w-full border-b border-transparent bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg border-border md:rounded-none md:border-b transition-[background-color,box-shadow,border-radius,border-color] duration-500 ease-in-out",
-                {
-                    "md:top-4 md:max-w-6xl md:rounded-2xl md:border md:shadow-lg":
-                        scrolled && !open,
-                    "bg-background/90 backdrop-blur-md": open,
-                }
-            )}
-
-        >
-            <nav
+        <>
+            <motion.header
+                layout
+                transition={{ type: "spring", stiffness: 120, damping: 20 }}
                 className={cn(
-                    'sticky flex h-16 w-full max-w-7xl mx-auto items-center justify-between px-4 md:h-16',
+                    "fixed top-0 left-0 right-0 z-50 mx-auto w-full border-b border-transparent bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg border-border md:rounded-none md:border-b transition-[background-color,box-shadow,border-radius,border-color] duration-500 ease-in-out",
                     {
-                        'md:px-2': scrolled,
-                    },
+                        "md:top-4 md:max-w-6xl md:rounded-2xl md:border md:shadow-lg":
+                            scrolled && !open,
+                        "bg-background/90 backdrop-blur-md": open,
+                    }
                 )}
+
             >
-                <Link href="/" className="flex items-center gap-2">
-                    <span className="text-xl font-bold tracking-tight">ElevenCoder</span>
-                </Link>
-                <div className="hidden items-center gap-2 md:flex">
-                    {links.map((link, i) => (
-                        <Link key={i} className={buttonVariants({ variant: 'ghost' })} href={link.href}>
-                            {link.label}
-                        </Link>
-                    ))}
-                    <Button asChild>
-                        <Link href="/contact">Book a Call</Link>
+                <nav
+                    className={cn(
+                        'sticky flex h-16 w-full max-w-7xl mx-auto items-center justify-between px-4 md:h-16',
+                        {
+                            'md:px-2': scrolled,
+                        },
+                    )}
+                >
+                    <Link href="/" className="flex items-center gap-2">
+                        <span className="text-xl font-bold tracking-tight">ElevenCoder</span>
+                    </Link>
+                    <div className="hidden items-center gap-2 md:flex">
+                        {links.map((link, i) => (
+                            <Link key={i} className={buttonVariants({ variant: 'ghost' })} href={link.href}>
+                                {link.label}
+                            </Link>
+                        ))}
+                        <Button asChild>
+                            <Link href="/contact">Book a Call</Link>
+                        </Button>
+                    </div>
+                    <Button size="icon" variant="outline" onClick={() => setOpen(!open)} className="md:hidden">
+                        <MenuToggleIcon open={open} className="size-5" duration={300} />
                     </Button>
-                </div>
-                <Button size="icon" variant="outline" onClick={() => setOpen(!open)} className="md:hidden">
-                    <MenuToggleIcon open={open} className="size-5" duration={300} />
-                </Button>
-            </nav>
+                </nav>
+            </motion.header>
 
             <div
                 className={cn(
-                    'bg-background/90 fixed top-14 right-0 bottom-0 left-0 z-50 flex flex-col overflow-hidden border-y md:hidden',
+                    'bg-background/90 fixed top-16 right-0 bottom-0 left-0 z-40 flex flex-col overflow-hidden border-y md:hidden',
                     open ? 'block' : 'hidden',
                 )}
             >
@@ -111,12 +114,15 @@ export function Header() {
                         ))}
                     </div>
                     <div className="flex flex-col gap-2">
-                        <Button className="w-full" asChild onClick={() => setOpen(false)}>
-                            <Link href="/contact">Book a Call</Link>
+                        <Button className="w-full group" asChild onClick={() => setOpen(false)}>
+                            <Link href="/contact">
+                                Book a Call
+                                <ArrowRight className="ml-2 w-4 h-4 group-hover:animate-bounce-x" />
+                            </Link>
                         </Button>
                     </div>
                 </div>
             </div>
-        </motion.header>
+        </>
     );
 }

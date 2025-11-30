@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Globe, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { Beams } from "@/components/ui/ethereal-beams-hero";
+import { CTATracker } from "@/components/ui/cta-visibility-context";
 
 export function HeroSection() {
     return (
@@ -63,12 +64,14 @@ export function HeroSection() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
                     >
-                        <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
-                            <Link href="/contact">
-                                Schedule a Free Consultation
-                                <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
-                            </Link>
-                        </Button>
+                        <CTATracker id="hero-cta">
+                            <Button size="xl" className="group text-lg px-8 h-14 bg-white text-black hover:bg-white hover:shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-transform duration-300 ease-out" asChild>
+                                <Link href="/contact">
+                                    Schedule a Free Consultation
+                                    <ArrowRight className="ml-2 w-5 h-5 group-hover:animate-bounce-x" />
+                                </Link>
+                            </Button>
+                        </CTATracker>
                         <Button size="xl" variant="outline" className="text-lg px-8 h-14 border-white/20 hover:bg-white/10" asChild>
                             <Link href="/portfolio">
                                 See Our Work
