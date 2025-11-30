@@ -6,6 +6,8 @@ import { MenuToggleIcon } from '@/components/ui/menu-toggle-icon';
 import { useScroll } from '@/components/ui/use-scroll';
 import Link from 'next/link';
 
+import { motion } from "framer-motion";
+
 export function Header() {
     const [open, setOpen] = React.useState(false);
     const scrolled = useScroll(10);
@@ -41,11 +43,13 @@ export function Header() {
     }, [open]);
 
     return (
-        <header
+        <motion.header
+            layout
+            transition={{ type: "spring", stiffness: 120, damping: 20 }}
             className={cn(
-                "fixed top-0 left-0 right-0 z-50 mx-auto w-full border-b border-transparent bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg border-border md:rounded-none md:border-b md:transition-all md:ease-out",
+                "fixed top-0 left-0 right-0 z-50 mx-auto w-full border-b border-transparent bg-background/95 supports-[backdrop-filter]:bg-background/50 backdrop-blur-lg border-border md:rounded-none md:border-b transition-[background-color,box-shadow,border-radius,border-color] duration-500 ease-in-out",
                 {
-                    "md:top-4 md:max-w-6xl md:rounded-md md:border md:shadow":
+                    "md:top-4 md:max-w-6xl md:rounded-2xl md:border md:shadow-lg":
                         scrolled && !open,
                     "bg-background/90 backdrop-blur-md": open,
                 }
@@ -54,7 +58,7 @@ export function Header() {
         >
             <nav
                 className={cn(
-                    'sticky flex h-16 w-full max-w-7xl mx-auto items-center justify-between px-4 md:h-16 md:transition-all md:ease-out',
+                    'sticky flex h-16 w-full max-w-7xl mx-auto items-center justify-between px-4 md:h-16',
                     {
                         'md:px-2': scrolled,
                     },
@@ -113,6 +117,6 @@ export function Header() {
                     </div>
                 </div>
             </div>
-        </header>
+        </motion.header>
     );
 }

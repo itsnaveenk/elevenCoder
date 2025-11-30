@@ -87,6 +87,15 @@ export default function Home() {
 
       <ProblemSolution />
 
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      >
+        <GlobalImpact />
+      </motion.div>
+
       {/* Services Section */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-purple/5 to-transparent pointer-events-none" />
@@ -116,7 +125,7 @@ export default function Home() {
         </Container>
       </section>
 
-      <GlobalImpact />
+
 
       {/* Case Studies Section */}
       <section className="py-24 bg-neutral-900/30">
